@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TEL 596</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="password-screen">
+    <div id="password-screen-content">
+      <img id="password-image" src="image.jpg" />
+      <h2>Enter Password</h2>
+      <div id="password-input-container">
+        <input type="password" id="password-input" />
+        <button id="password-button">Enter</button>
+      </div>
+      <div id="error"></div>
+    </div>
+  </div>
+
+  <div id="container" class="hidden">
+    <div id="list">
+      <h1>Bilimsel Araştırma,Etik ve Seminer Dersi Proje Sunumları</h1>
+      <div id="items"></div>
+    </div>
+  </div>
+
+  <!-- DETAIL VIEW -->
+    <div id="detail" class="hidden">
+      <button id="back-button">← GERİ</button>
+
+      <h2 id="detail-title"></h2>
+      <p><strong>Sunan Öğrenci:</strong> <span id="detail-presenter"></span></p>
+
+      <p>
+        <a id="detail-pdf" target="_blank">Rapor Linki</a>
+      </p>
+
+      <iframe id="detail-video"></iframe>
+    </div>
+
+
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Password screen */
+#password-screen {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#password-screen-content{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+#password-screen input {
+  padding: 10px;
+  font-size: 16px;
+  width: 350px;
+}
+
+#password-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#password-screen button {
+  padding: 10px 16px;
+  font-size: 16px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+#password-image {
+  display: block;
+  margin: auto;
+  text-align: center;
+  width: 90vw;
+  max-width: 650px;
+}
+
+#error {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Main container */
+#container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* List items */
+.item {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.item:hover {
+  background: #f0f0f0;
+}
+
+/* Detail view */
+#detail button {
+  margin-bottom: 15px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  margin-top: 15px;
+}
+
+#detail {
+  padding: 14px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Password screen centering */
+.fullscreen-center {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+#password-input {
+  padding: 6px;
+  width: 200px;
+}
+
+#password-button {
+  margin-top: 10px;
+  padding: 6px 12px;
+}
+
+#error {
+  color: red;
+  margin-top: 8px;
+}
+
+/* List */
+.item {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: #f2f2f2;
+}
+
+/* Detail */
+#detail iframe {
+  margin-top: 15px;
+  max-width: 100%;
+}
+
+#back-button {
+  margin-bottom: 15px;
+  padding: 6px 12px;
+}
