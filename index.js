@@ -10,15 +10,16 @@ const data = [
   {
     name: "Serkan Anılır, Kemal Alemdaroğlu VAKALARI",
     pdf: "https://ninova.itu.edu.tr/Sinif/35241.111171/Odev/235745",
-    youtube_embed: "https://www.youtube.com/embed/HIWKxI4PaT0",
+    youtube_url: "https://www.youtube.com/embed/fSrquKbw484",
   },
   {
     name: "Salih Ergün, WASET, TÖK/ZÖK VAKALARI",
-    youtube_embed: "https://www.youtube.com/embed/1nT77hdyOU8?start=2",
+    youtube_url: "https://www.youtube.com/embed/v53f0d66cvc?start=2",
   },
   {
     name: "AA VAKASI",
     presenter: "Eren Taha Yüzgeç",
+    youtube_url: "https://www.youtube.com/embed/1nT77hdyOU8?start=2",
   },
 ];
 
@@ -93,39 +94,55 @@ function loadItems() {
 function showDetail(index) {
   const item = data[index];
 
+  // Title (mandatory)
   detailTitle.textContent = item.name;
 
+  // Presenter (optional)
   if (item.presenter) {
-    presenterRow.classList.remove("hidden");
     detailPresenter.textContent = item.presenter;
+    detailPresenter.parentElement.classList.remove("hidden");
   } else {
-    presenterRow.classList.add("hidden");
+    detailPresenter.parentElement.classList.add("hidden");
   }
 
+  // PDF (optional)
   if (item.pdf) {
-    pdfRow.classList.remove("hidden");
     detailPdf.href = item.pdf;
+    detailPdf.parentElement.classList.remove("hidden");
   } else {
-    pdfRow.classList.add("hidden");
+    detailPdf.parentElement.classList.add("hidden");
   }
 
-  if (item.youtube_embed) {
+  // YouTube embed (optional, SAFE)
+  if (item.youtube_url) {
+    detailVideo.innerHTML = `
+      <iframe
+        class="w-full"
+        src="${item.youtube_url}"
+        title="YouTube video player"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    `;
     detailVideo.classList.remove("hidden");
-    detailVideo.src = item.youtube_embed;
   } else {
+    detailVideo.innerHTML = "";
     detailVideo.classList.add("hidden");
-    detailVideo.src = "";
   }
 
-  showDetailPage();
+  // Navigation
+  container.classList.add("hidden");
+  detailView.classList.remove("hidden");
 }
 
 /************************
  * BACK BUTTON
  ************************/
 backButton.addEventListener("click", () => {
-  detailVideo.src = "";
-  showList();
+  detailVideo.innerHTML = ""; // stop video
+  detailView.classList.add("hidden");
+  container.classList.remove("hidden");
 });
 
 /************************
