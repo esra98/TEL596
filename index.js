@@ -75,7 +75,12 @@ function loadItems() {
   data.forEach((item, index) => {
     const div = document.createElement("div");
     div.className = "item";
-    div.textContent = `${item.name} — ${item.presenter}`;
+
+    // Only show presenter if it exists
+    div.textContent = item.presenter
+      ? `${item.name} — ${item.presenter}`
+      : item.name;
+
     div.addEventListener("click", () => showDetail(index));
     itemsDiv.appendChild(div);
   });
@@ -87,10 +92,33 @@ function loadItems() {
 function showDetail(index) {
   const item = data[index];
 
+  // Title (mandatory)
   detailTitle.textContent = item.name;
-  detailPresenter.textContent = item.presenter;
-  detailPdf.href = item.pdf;
-  detailVideo.src = item.youtube_embed;
+
+  // Presenter (optional)
+  if (item.presenter) {
+    detailPresenter.textContent = item.presenter;
+    detailPresenter.parentElement.classList.remove("hidden");
+  } else {
+    detailPresenter.parentElement.classList.add("hidden");
+  }
+
+  // PDF link (optional)
+  if (item.pdf) {
+    detailPdf.href = item.pdf;
+    detailPdf.parentElement.classList.remove("hidden");
+  } else {
+    detailPdf.parentElement.classList.add("hidden");
+  }
+
+  // YouTube embed (optional)
+  if (item.youtube_embed) {
+    detailVideo.src = item.youtube_embed;
+    detailVideo.classList.remove("hidden");
+  } else {
+    detailVideo.src = "";
+    detailVideo.classList.add("hidden");
+  }
 
   listView.classList.add("hidden");
   detailView.classList.remove("hidden");
