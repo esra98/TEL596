@@ -10,7 +10,7 @@ const data = [
   {
     name: "Serkan Anılır, Kemal Alemdaroğlu VAKALARI",
     pdf: "https://ninova.itu.edu.tr/Sinif/35241.111171/Odev/235745",
-    youtube_url: "https://www.youtube.com/embed/fSrquKbw484",
+    youtube_url: "https://www.youtube.com/embed/zFOXIcd8_Rc",
   },
   {
     name: "Salih Ergün, WASET, TÖK/ZÖK VAKALARI",
