@@ -7,6 +7,7 @@
 </head>
 <body>
 
+  <!-- PASSWORD SCREEN -->
   <div id="password-screen">
     <div id="password-screen-content">
       <img id="password-image" src="image.jpg" />
@@ -19,27 +20,33 @@
     </div>
   </div>
 
+  <!-- LIST PAGE -->
   <div id="container" class="hidden">
-    <div id="list">
-      <h1>Bilimsel Araştırma,Etik ve Seminer Dersi Proje Sunumları</h1>
-      <div id="items"></div>
-    </div>
+    <h1>Bilimsel Araştırma, Etik ve Seminer Dersi Proje Sunumları</h1>
+    <div id="items"></div>
   </div>
 
-  <!-- DETAIL VIEW -->
-    <div id="detail" class="hidden">
-      <button id="back-button">← GERİ</button>
+  <!-- DETAIL PAGE -->
+  <div id="detail" class="hidden">
+    <button id="back-button">← GERİ</button>
 
-      <h2 id="detail-title"></h2>
-      <p><strong>Sunan Öğrenci:</strong> <span id="detail-presenter"></span></p>
+    <h2 id="detail-title"></h2>
 
-      <p>
-        <a id="detail-pdf" target="_blank">Rapor Linki</a>
-      </p>
+    <p id="presenter-row">
+      <strong>Sunan Öğrenci:</strong>
+      <span id="detail-presenter"></span>
+    </p>
 
-      <iframe id="detail-video"></iframe>
-    </div>
+    <p id="pdf-row">
+      <a id="detail-pdf" target="_blank">Rapor Linki</a>
+    </p>
 
+    <iframe
+      id="detail-video"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
 
   <script src="index.js"></script>
 </body>
